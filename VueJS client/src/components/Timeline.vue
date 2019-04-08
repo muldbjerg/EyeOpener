@@ -46,14 +46,10 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(function() {
     this.updateHeight();
-    // }, 800);
   },
   watch: {
     usage() {
-      // this.active = false;
-      console.log(this.usage);
       this.updateHeight();
     }
   }

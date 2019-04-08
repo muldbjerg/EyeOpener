@@ -40,11 +40,12 @@ export default {
   data: function() {
     return {
       statusOfTheDay: 10,
-      currentDate: new Date(), //new Date("2019-05-23")
+      currentDate: new Date("2019-04-06"), // Used because of the stop of data
       useToday: 0,
       useLimit: 104,
       eyeInFocus: true,
-      urlToDb: "192.168.43.252", //"10.192.113.226",
+      urlToDb:
+        "ec2co-ecsel-mzvv3nxtei5-530863203.eu-west-1.elb.amazonaws.com:5000",
       usage: null
     };
   },
@@ -65,7 +66,7 @@ export default {
       var accumulatedRequestString =
         "http://" +
         this.urlToDb +
-        ":9090/api/accumulated/0" +
+        "/api/accumulated/0" +
         (this.currentDate.getMonth() + 1) +
         "/" +
         this.currentDate.getDate();
@@ -82,7 +83,7 @@ export default {
       var dayRequestString =
         "http://" +
         this.urlToDb +
-        ":9090/api/day/0" +
+        "/api/day/0" +
         (this.currentDate.getMonth() + 1) +
         "/" +
         this.currentDate.getDate();
